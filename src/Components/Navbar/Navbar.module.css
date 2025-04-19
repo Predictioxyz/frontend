@@ -1,0 +1,382 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 83px;
+  top: 0px;
+  background-color: white;
+  font-size: 15px;
+  font-weight: 550;
+  gap: .5rem;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.02), 0px 6px 12px rgba(0, 0, 0, 0.02);
+}
+
+
+.navbar_content {
+  color: var(--main-text-color);
+  width: 100%;
+  max-width: 1440px;
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 83px;
+}
+
+
+.left {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  gap: 5rem;
+}
+
+.left img {
+  height: 38px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.left img:hover {
+  opacity: 0.9;
+}
+
+.center {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  color: var(--header-text-color);
+  height: 100%;
+}
+
+.center>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.center>div span {
+  padding-top: 6px;
+}
+
+
+.center>div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: var(--transition);
+  z-index: 9999;
+}
+
+.select:hover {
+  color: var(--main-text-color);
+}
+
+.select:hover::after {
+  background-color: var(--gray-2) !important;
+}
+
+.selected {
+  color: var(--main-text-color);
+}
+
+.selected::after {
+  background-color: var(--main-text-color) !important;
+}
+
+
+.right {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-wrap: nowrap;
+  gap: 1rem;
+}
+
+.right>div {
+  height: 40px;
+}
+
+.leaderboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -150px;
+  border-radius: 48px;
+  color: var(--main-button-color);
+  border: 1px solid var(--main-button-color);
+  background-color: transparent;
+  font-weight: 600;
+  transition: background-color var(--transition);
+  padding: 0 .9rem;
+  cursor: pointer;
+  font-size: 14px;
+  gap: .2rem;
+}
+
+.leaderboard svg {
+  height: 100%;
+  fill: var(--main-button-color);
+}
+
+.leaderboard:hover {
+  background-color: var(--secondary-button-hover);
+}
+
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -150px;
+  border-radius: 48px;
+  color: var(--main-button-color);
+  border: 1px solid var(--main-button-color);
+  background-color: transparent;
+  font-weight: 600;
+  transition: background-color var(--transition);
+  padding: 0 .9rem;
+  cursor: pointer;
+  font-size: 14px;
+  gap: .2rem;
+}
+
+.profile svg {
+  height: 100%;
+  fill: var(--main-button-color);
+}
+
+.profile:hover {
+  background-color: var(--secondary-button-hover);
+}
+
+.walletLogo {
+  width: fit-content;
+  height: 55% !important;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: .2rem;
+}
+
+.walletLogo img {
+  width: auto;
+  height: 85%;
+  aspect-ratio: 1/1;
+}
+
+.wallet:hover {
+  opacity: 90%;
+}
+
+
+.wallet {
+  position: relative;
+  color: var(--secondary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 48px;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  background-color: var(--main-button-color);
+  font-size: 14px;
+  padding: 0 1.2rem;
+  z-index: 111;
+}
+
+.wallet>div {
+  width: 100%;
+}
+
+.walletMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 111;
+}
+
+.walletMenu>div {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 48px;
+  background-color: var(--main-button-color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.2rem;
+}
+
+.walletMenuVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.walletMenu div {
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.walletMenu>div:hover {
+  background-color: var(--main-button-color-1-hover);
+}
+
+.nonSelectableText {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    justify-content: initial;
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 5%;
+    gap: 0;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+  }
+
+  .nav_items {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30px;
+    overflow-x: auto;
+    font-size: 14px;
+  }
+
+  .nav_items::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav_items>div {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+
+  .nav_items>div:first-child {
+    margin-left: 0;
+  }
+
+  .select {
+    border-bottom: none;
+  }
+
+  .select:hover {
+    border-bottom: none;
+  }
+
+  .selected {
+    border-bottom: 2px solid var(--main-text-color);
+  }
+
+  .selected {
+    color: var(--main-text-color);
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+  }
+
+  .left {
+    justify-content: start;
+  }
+
+  .left img:hover {
+    opacity: 1;
+  }
+
+  .left img {
+    height: 30px;
+  }
+
+  .right {
+    gap: .5rem;
+  }
+
+  .right div {
+    height: 30px;
+  }
+
+  .wallet {
+    font-size: 12px;
+    padding: 0 .7rem;
+  }
+
+  .wallet:hover {
+    opacity: 1;
+  }
+
+  .walletLogo {
+    height: 60% !important;
+    padding: 0;
+  }
+
+  .walletLogo img {
+    height: 70%;
+  }
+
+  .leaderboard,
+  .profile {
+    border: none;
+    padding: 0;
+  }
+
+  .leaderboard svg,
+  .profile svg {
+    height: auto;
+  }
+
+  .leaderboard:hover,
+  .profile:hover {
+    background-color: transparent;
+  }
+}

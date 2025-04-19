@@ -1,0 +1,111 @@
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    height: 150px;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 300px;
+}
+
+.background0 {
+    background: linear-gradient(to right, #8283FF, #B5B6FF);
+}
+
+.background1 {
+    background: linear-gradient(to right, #FF6B6B, #FFA3A3);
+}
+
+.background2 {
+    background: linear-gradient(to right, #9B59B6, #C39BD3);
+}
+
+.background3 {
+    background: linear-gradient(to right, #2ca35e, #8acd98);
+}
+
+.cardContent {
+    padding: 1rem;
+    padding-right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.cardContent>div:first-child {
+    flex: 2;
+}
+
+.cardContent>div:last-child {
+    flex: 1;
+}
+
+.left {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.adCardButton {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    width: fit-content;
+    position: absolute;
+    border-radius: 500px;
+    padding: .5rem 1.3rem;
+    font-size: 14px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: var(--transition);
+    bottom: 10px;
+    color: var(--secondary-text-color);
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.right {
+    flex: 0 0 auto;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 1024px) {
+
+    .card {
+        min-width: calc(50% - 0.5rem);
+    }
+
+    button:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (max-width: 767px) {
+
+    .cardContent>div:first-child {
+        flex: 1.5;
+    }
+
+    .card {
+        flex-shrink: 0;
+    }
+}

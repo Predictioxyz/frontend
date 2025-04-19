@@ -1,0 +1,796 @@
+.eventPage {
+    max-width: 1080px;
+    gap: 2.5rem;
+    padding-bottom: 5rem;
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.HeaderImage img {
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.loaderImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    background-color: var(--loader-background);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.loaderImage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 38px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: move 1.5s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.HeaderPreinfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--main-text-color);
+    flex-grow: 1;
+}
+
+.HeaderPreinfo:only-child {
+    flex-direction: row;
+}
+
+.HeaderVolume {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 28px;
+}
+
+.closed {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--red);
+    font-style: italic !important;
+    padding: 0 .9rem;
+    background-color: #ff00000b;
+    border-radius: 48px;
+}
+
+
+.HeaderVolume>div {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.HeaderVolume>div:first-child {
+    color: var(--main-text-color);
+    gap: 1rem;
+}
+
+.HeaderVolume>div:last-child {
+    gap: .35rem;
+}
+
+.icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    transition: .25s;
+    color: var(--gray);
+}
+
+.icon:hover {
+    color: var(--tooltip-color);
+}
+
+.icon>span:first-child {
+    cursor: pointer;
+}
+
+.tooltip {
+    background-color: var(--tooltip-color);
+    color: #fff;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: .6rem;
+    padding: .3rem .5rem;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.25s linear;
+    opacity: 0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid var(--tooltip-color);
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--tooltip-color);
+    margin-top: -1px;
+}
+
+.icon:hover .tooltip {
+    opacity: 1;
+}
+
+.nonVisibleTooltip {
+    opacity: 0 !important;
+}
+
+.loaderVolume {
+    position: relative;
+    background-color: var(--loader-background);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.loaderVolume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 24px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+    animation: move 1.5s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.HeaderTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+    color: var(--main-text-color);
+    font-weight: 400;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;
+}
+
+.HeaderTitle>div {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    width: 100%;
+    opacity: 0.15;
+    filter: grayscale(100%);
+    height: auto;
+    aspect-ratio: 23/5;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+.headerInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: .3rem;
+}
+
+.headerInfo svg {
+    height: 20px;
+    width: auto;
+    aspect-ratio: 1/1;
+    fill: var(--tooltip-color);
+}
+
+.resultDate>div svg {
+    height: 20px;
+    width: auto;
+    aspect-ratio: 1/1;
+    fill: var(--tooltip-color);
+}
+
+.Predict {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: .3px solid var(--loader-background);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 6px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.Predict>div {
+    width: 50%;
+}
+
+.predictLeft {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.predictLeft>div {
+    display: flex;
+    align-items: center;
+}
+
+.predictLeft>p {
+    font-size: 16px;
+    font-weight: 650;
+}
+
+.buyOrSell {
+    display: flex;
+    flex-direction: row;
+    transition: 0.2s;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.buyOrSell>div {
+    cursor: pointer;
+    width: fit-content;
+    border-bottom: 3px solid transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: .5rem 0;
+}
+
+.selected {
+    border-bottom: 3px solid var(--main-button-color) !important;
+    color: var(--main-button-color);
+}
+
+.chance {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    align-items: flex-start !important;
+}
+
+.chance>p {
+    color: var(--gray);
+    font-size: 16px;
+}
+
+.chance>div {
+    color: var(--main-button-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.closedMarket * {
+    color: var(--gray) !important;
+    cursor: initial !important;
+}
+
+.closedMarketButtons>div {
+    background-color: var(--gray-1);
+    color: var(--gray) !important;
+}
+
+.closedMarketInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.closedMarketInfo>p:nth-child(2) {
+    color: var(--main-button-color);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.closedMarketIcon {
+    display: flex;
+    width: 10%;
+    height: auto;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-button-color);
+    border-radius: 50%;
+}
+
+.closedMarketIcon svg {
+    height: 100%;
+    width: 100%;
+    fill: white;
+}
+
+.claimedReward {
+    background-color: var(--gray-1) !important;
+    color: var(--gray) !important;
+    cursor: unset !important;
+}
+
+.closedMarketButtons>div:hover {
+    background-color: var(--gray-1);
+    color: var(--gray) !important;
+    pointer-events: none !important;
+}
+
+.pchances {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+.pchances>div {
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.predictRight {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.predictRightClosed {
+    justify-content: center;
+}
+
+.count {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.count p {
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 650;
+}
+
+.max {
+    background-color: var(--gray-1);
+    padding: .3rem 1rem;
+    border-radius: 500px;
+    color: var(--gray);
+    font-size: 12px !important;
+    cursor: pointer;
+}
+
+.currencyInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currencyButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.currencyButton svg {
+    height: 100%;
+    width: 50%;
+    fill: var(--gray);
+}
+
+.currencyButton .tooltip {
+    visibility: hidden;
+}
+
+.currencyButton>svg:hover+.tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.decrease {
+    left: 0%;
+}
+
+.increase {
+    right: 0%;
+}
+
+.customInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    color: var(--main-text-color);
+    border: 1px solid var(--gray-1);
+    border-radius: 5px;
+    transition: border-color 0.2s ease;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+.customInput::-webkit-outer-spin-button,
+.customInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.customInput:focus {
+    border-color: var(--gray);
+    outline: none;
+}
+
+.customInput::placeholder {
+    color: var(--gray);
+}
+
+.payButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.connectWallet {
+    color: var(--gray-2);
+    border: 1px solid var(--gray-2);
+}
+
+.openPosition {
+    background-color: var(--main-button-color);
+    color: var(--secondary-text-color);
+    transition: .2s;
+    cursor: pointer;
+}
+
+.disabled:hover {
+    opacity: 100% !important;
+    cursor: initial;
+}
+
+.openPosition:hover {
+    opacity: 90%;
+}
+
+.potencialReturn p {
+    color: var(--gray);
+}
+
+.potencialReturn>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--green);
+    text-wrap: nowrap;
+    font-weight: 550;
+}
+
+.win {
+    background-color: var(--green-1);
+    color: var(--green);
+}
+
+.win:hover {
+    background-color: var(--green-3);
+    background-color: 0.075s ease-in-out, color 0.075s ease-in-out;
+}
+
+.swin {
+    background-color: var(--green);
+    color: var(--secondary-text-color);
+}
+
+.swin:hover {
+    background-color: var(--green-2);
+    background-color: 0.075s ease-in-out, color 0.075s ease-in-out;
+}
+
+.lose {
+    background-color: var(--red-1);
+    color: var(--red);
+}
+
+.lose:hover {
+    background-color: var(--red-3);
+    background-color: 0.075s ease-in-out, color 0.075s ease-in-out;
+}
+
+.slose {
+    background-color: var(--red);
+    color: var(--secondary-text-color);
+}
+
+.slose:hover {
+    background-color: var(--red-2);
+    background-color: 0.075s ease-in-out, color 0.075s ease-in-out;
+}
+
+.after {
+    width: 100%;
+}
+
+.after>div:first-child {
+    padding-bottom: .5rem;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: .5px solid #82828217;
+    margin-bottom: 1rem;
+}
+
+.after>div:last-child {
+    font-size: 18px;
+}
+
+.Rules {
+    width: 100%;
+    border-radius: 48px;
+    margin-bottom: 4rem;
+}
+
+.nonSelectableText {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+
+@media (max-width: 768px) {
+    .eventPage {
+        gap: 1.5rem;
+    }
+
+    .Header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .HeaderImage {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        color: var(--gray);
+    }
+
+    .HeaderImage>div {
+        width: 100%;
+    }
+
+    .HeaderVolume {
+        flex-direction: column;
+    }
+
+    .HeaderVolume p {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: var(--main-text-color);
+    }
+
+    .HeaderVolume>p>div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .icon {
+        align-items: start;
+    }
+
+    .icon:hover {
+        color: var(--gray);
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .HeaderTitle {
+        font-size: 20px;
+    }
+
+    .headerInfo {
+        justify-content: space-between;
+        color: var(--main-text-color);
+    }
+
+    .headerInfo>div {
+        display: flex;
+        flex-direction: row;
+        gap: .25rem;
+        align-items: center;
+    }
+
+    .resultDate>div {
+        display: flex;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+    }
+
+    .resultDate>div svg {
+        height: 18px;
+        width: auto;
+        aspect-ratio: 1/1;
+        fill: var(--tooltip-color);
+    }
+
+    .Predict {
+        flex-direction: column;
+    }
+
+    .Predict>div {
+        width: 100%;
+    }
+
+
+    .topLine {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .chance {
+        justify-content: flex-end;
+        width: fit-content;
+    }
+
+    .variantTitle {
+        padding: 1rem 0;
+    }
+
+    .variantTitle p {
+        font-size: 13px;
+    }
+
+    .variantTitle p:nth-child(2) {
+        justify-content: end;
+    }
+
+    .refresh_icon {
+        font-size: 13px;
+    }
+
+    .chances {
+        width: 100%;
+        height: 39px;
+        justify-content: space-between;
+    }
+
+    .chances>div {
+        width: 50%;
+    }
+
+    .win:hover {
+        background-color: var(--green-3);
+    }
+
+    .swin:hover {
+        background-color: var(--green);
+    }
+
+    .lose:hover {
+        background-color: var(--red-1);
+    }
+
+    .slose:hover {
+        background-color: var(--red);
+    }
+
+    .after {
+        padding: 0;
+    }
+
+    .after>div:last-child {
+        font-size: 16px;
+    }
+
+    .openPosition:hover {
+        opacity: 100%;
+    }
+
+    .currencyButton {
+        width: 17%;
+    }
+
+    .currencyButton svg {
+        width: 45%;
+    }
+}

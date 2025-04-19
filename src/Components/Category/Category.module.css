@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.categoryPage {
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .categoryPage {
+    gap: 1.4rem;
+  }
+}

@@ -1,0 +1,119 @@
+.marqueeContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.7rem 50px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.marquee {
+  width: 100%;
+  max-width: 1340px;
+  height: 4rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.marqueeContent {
+  display: flex;
+  white-space: nowrap;
+  color: #000;
+  height: 100%;
+  position: absolute;
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.marqueeContent::after {
+  content: attr(data-content);
+  display: flex;
+}
+
+.marqueeItem {
+  display: inline-block;
+  padding: 0 20px;
+  border: 1px solid var(--gray-1);
+  height: 100%;
+  border-radius: 4px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.marqueeTitle {
+  font-size: 14px;
+  font-weight: 550;
+  color: var(--main-text-color);
+}
+
+.marqueeInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+}
+
+.marqueeInfo>div {
+  display: flex;
+  justify-content: end;
+  line-height: 16px;
+  align-items: end;
+  font-size: 16px;
+}
+
+.wallet {
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.yesOrNO {
+  font-weight: 500;
+}
+
+.yes {
+  color: var(--green);
+}
+
+.no {
+  color: var(--red);
+}
+
+.sum {
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.marqueeContent:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marqueeContainer {
+    padding: 0.7rem 0;
+  }
+
+  .marqueeContent {
+    animation-duration: 60s;
+  }
+}

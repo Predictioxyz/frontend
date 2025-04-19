@@ -1,0 +1,63 @@
+.mainPageContent {
+    gap: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.adCards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.adCards::-webkit-scrollbar {
+    display: none;
+}
+
+
+.viewAll {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.viewButton {
+    border-radius: 48px;
+    width: 150px;
+    height: 40px;
+    color: var(--main-button-color);
+    border: 1px solid var(--main-button-color);
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.viewButton:hover {
+    background-color: var(--secondary-button-hover);
+}
+
+.grab {
+    cursor: grab;
+    user-select: none;
+}
+
+.grabbing {
+    cursor: grabbing;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .mainPageContent {
+        gap: 1.4rem;
+    }
+}

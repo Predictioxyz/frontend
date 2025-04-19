@@ -1,0 +1,338 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: .5px solid var(--gray-3);
+  width: 100%;
+  height: 195px;
+}
+
+.cardContent {
+  padding: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.loaderImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  position: relative;
+  background-color: var(--loader-background);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.loaderImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 38px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: move 1.5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.cardHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 43px;
+  gap: 0.5rem;
+}
+
+.cardImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cardImage img {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+}
+
+.cardTitle {
+  font-size: 15.5px;
+  color: var(--main-text-color);
+  font-weight: 400;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 100%;
+  cursor: pointer;
+}
+
+.loaderTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 45%;
+  border-radius: 4px;
+  position: relative;
+  background-color: var(--loader-background);
+  overflow: hidden;
+}
+
+.loaderTitle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: move 1.5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.cardTitle:hover {
+  text-decoration: underline;
+}
+
+.cardBody {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.variantList {
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  gap: 0.4rem;
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.loaderVariantList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+  background-color: var(--loader-background);
+  overflow: hidden;
+}
+
+.loaderVariantList::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: move 2.5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.cardVolume {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray);
+  position: relative;
+}
+
+.watchlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.watchlist svg {
+  height: 100%;
+  width: auto;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: fill .3s ease;
+}
+
+@keyframes fillAnimation {
+  from {
+    fill: #ffffff;
+  }
+
+  to {
+    fill: var(--main-button-color);
+  }
+}
+
+.favorite svg {
+  animation: fillAnimation 0.7s ease forwards;
+}
+
+@keyframes nonfillAnimation {
+  from {
+    fill: #ffffff;
+  }
+
+  to {
+    color: var(--main-button-color);
+  }
+}
+
+.nonFavorite svg {
+  animation: nonfillAnimation 0.7s ease forwards;
+}
+
+.loaderVolume {
+  width: 40%;
+  height: 24px;
+  position: relative;
+  background-color: var(--loader-background);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.loaderVolume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 24px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: move 1.5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.noVariant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: .4rem;
+}
+
+.noVariant>div {
+  height: 100%;
+  width: 100%;
+}
+
+.noVariantChance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-button-color);
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.noVariantButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.noVariantButtons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  background-color: 0.075s ease-in-out, color 0.075s ease-in-out;
+  cursor: pointer;
+}
+
+.noVariantYes {
+  color: var(--green);
+  background-color: var(--green-1);
+  transition: var(--transition);
+}
+
+.noVariantYes:hover {
+  color: var(--secondary-text-color);
+  background-color: var(--green);
+}
+
+.noVariantNo {
+  color: var(--red);
+  background-color: var(--red-1);
+  transition: var(--transition);
+}
+
+.noVariantNo:hover {
+  color: var(--secondary-text-color);
+  background-color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .cardTitle:hover {
+    text-decoration: none;
+  }
+  
+  .noVariantYes:hover {
+    color: var(--green);
+    background-color: var(--green-1);
+  }
+
+  .noVariantNo:hover {
+    color: var(--red);
+    background-color: var(--red-1);
+  }
+
+  .watchlist svg {
+    min-height: 1.5rem;
+  }
+}
